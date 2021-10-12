@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web-Programming Lab №1</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<section class=header>
+    <table>
+        <tbody>
+        <td class=title>
+            <h1>
+                Лабораторная работа №1<br>
+                по Веб-программированию
+            </h1>
+        </td>
+        <td class="logo-options">
+            <p><a href="https://se.ifmo.ru/" target="_blank"><input type="image" class="logo" src="pictures/company_logo.png"></a></p>
+        </td>
+        <td class=author>
+            <p>
+                Фисюк Александр Игоревич, 308439<br>
+                P3211<br>
+                Вариант: 11020
+            </p>
+        </td>
+        </tbody>
+    </table>
+</section>
+<section class=task>
+    <h1 class="headline">
+        Попадет ли точка в заданную плоскость?
+    </h1>
+    <table>
+        <tbody class="tbody-page">
+        <td class="area-options">
+            <div class="area-title">
+                <h2>График</h2>
+            </div>
+            <div class="area-image">
+                <img class="area" src="pictures/areas.png">
+            </div>
+        </td>
+        <td class="coordinates-picker">
+            <div class="coordinates-picker-title">
+                <h2>Проверка переменных</h2>
+            </div>
+            <div class="coordinates-picker-quiz">
+                <section class="x-checkboxes">
+                    X:
+                    <label for="x-checkbox1">-4</label>
+                    <input id="x-checkbox1" type="checkbox" value="-4">
+
+                    <label for="x-checkbox2">-3</label>
+                    <input id="x-checkbox2" type="checkbox" value="-3">
+
+                    <label for="x-checkbox3">-2</label>
+                    <input id="x-checkbox3" type="checkbox" value="-2">
+
+                    <label for="x-checkbox4">-1</label>
+                    <input id="x-checkbox4" type="checkbox" value="-1">
+
+                    <label for="x-checkbox5">0</label>
+                    <input id="x-checkbox5" type="checkbox" value="-0">
+
+                    <label for="x-checkbox6">1</label>
+                    <input id="x-checkbox6" type="checkbox" value="1">
+
+                    <label for="x-checkbox7">2</label>
+                    <input id="x-checkbox7" type="checkbox" value="2">
+
+                    <label for="x-checkbox8">3</label>
+                    <input id="x-checkbox8" type="checkbox" value="3">
+
+                    <label for="x-checkbox9">4</label>
+                    <input id="x-checkbox9" type="checkbox" value="4">
+                </section>
+                <p class="y">Y: <input type="text" placeholder="Число от -3 до 3..."></p>
+                <p class="r">R: <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button></p>
+                <p class="check">
+                    <br><br>
+                    <button class="checker">Проверить</button><button class="reset">Сбросить</button>
+                </p>
+            </div>
+        </td>
+        <td class="results-options">
+            <div class="results-title">
+                <h2>Результат</h2>
+            </div>
+            <div class="results-table">
+                <table>
+                    <tbody>
+                    <tr class="tr-options">
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Current time</th>
+                        <th>Execution time</th>
+                        <th>Hit result</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
