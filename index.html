@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Web-Programming Lab №1</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
-<body>
+<body disfigure="true">
 <section class=header>
     <table>
         <tbody>
@@ -28,81 +30,162 @@
         </tbody>
     </table>
 </section>
-<section class=task>
-    <h1 class="headline">
-        Попадет ли точка в заданную плоскость?
-    </h1>
-    <table>
-        <tbody class="tbody-page">
-        <td class="area-options">
-            <div class="area-title">
-                <h2>График</h2>
-            </div>
-            <div class="area-image">
-                <img class="area" src="pictures/areas.png">
-            </div>
-        </td>
-        <td class="coordinates-picker">
-            <div class="coordinates-picker-title">
-                <h2>Проверка переменных</h2>
-            </div>
-            <div class="coordinates-picker-quiz">
-                <section class="x-checkboxes">
-                    X:
-                    <label for="x-checkbox1">-4</label>
-                    <input id="x-checkbox1" type="checkbox" value="-4">
+<section class="page">
+    <br><br><br>
+    <table class="page-table">
+        <thead class="page-thead">
+        <tr>
+            <td class="graph-head"><h2>График</h2></td>
+            <td><h2>Проверка переменных</h2></td>
+            <td><h2>Результат</h2></td>
+        </tr>
+        </thead>
+        <tbody class="page-tbody">
+        <tr>
+            <td>
+                <div class="inner-info">
+                <svg xmlns="http://www.w3.org/2000/svg" class="img">
+                    <!— Стрелки и оси —>
+                    <line stroke="black" x1="0" x2="300" y1="150" y2="150"></line>
+                    <line stroke="black" x1="150" x2="150" y1="0" y2="300"></line>
+                    <polygon fill="black" points="150,0 144,15 156,15" stroke="black"></polygon>
+                    <polygon fill="black" points="300,150 285,156 285,144" stroke="black"></polygon>
 
-                    <label for="x-checkbox2">-3</label>
-                    <input id="x-checkbox2" type="checkbox" value="-3">
+                    <!— Деления —>
+                    <line stroke="black" x1="200" x2="200" y1="155" y2="145"></line>
+                    <line stroke="black" x1="250" x2="250" y1="155" y2="145"></line>
 
-                    <label for="x-checkbox3">-2</label>
-                    <input id="x-checkbox3" type="checkbox" value="-2">
+                    <line stroke="black" x1="50" x2="50" y1="155" y2="145"></line>
+                    <line stroke="black" x1="100" x2="100" y1="155" y2="145"></line>
 
-                    <label for="x-checkbox4">-1</label>
-                    <input id="x-checkbox4" type="checkbox" value="-1">
+                    <line stroke="black" x1="145" x2="155" y1="100" y2="100"></line>
+                    <line stroke="black" x1="145" x2="155" y1="50" y2="50"></line>
 
-                    <label for="x-checkbox5">0</label>
-                    <input id="x-checkbox5" type="checkbox" value="-0">
+                    <line stroke="black" x1="145" x2="155" y1="200" y2="200"></line>
+                    <line stroke="black" x1="145" x2="155" y1="250" y2="250"></line>
 
-                    <label for="x-checkbox6">1</label>
-                    <input id="x-checkbox6" type="checkbox" value="1">
+                    <!— Подписи к делениям и осям —>
+                    <text fill="black" x="195" y="140">R/2</text>
+                    <text fill="black" x="250" y="140">R</text>
 
-                    <label for="x-checkbox7">2</label>
-                    <input id="x-checkbox7" type="checkbox" value="2">
+                    <text fill="black" x="40" y="140">-R</text>
+                    <text fill="black" x="85" y="140">-R/2</text>
 
-                    <label for="x-checkbox8">3</label>
-                    <input id="x-checkbox8" type="checkbox" value="3">
+                    <text fill="black" x="160" y="55">R</text>
+                    <text fill="black" x="160" y="105">R/2</text>
 
-                    <label for="x-checkbox9">4</label>
-                    <input id="x-checkbox9" type="checkbox" value="4">
-                </section>
-                <p class="y">Y: <input type="text" placeholder="Число от -3 до 3..."></p>
-                <p class="r">R: <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button></p>
-                <p class="check">
-                    <br><br>
-                    <button class="checker">Проверить</button><button class="reset">Сбросить</button>
-                </p>
-            </div>
-        </td>
-        <td class="results-options">
-            <div class="results-title">
-                <h2>Результат</h2>
-            </div>
-            <div class="results-table">
+                    <text fill="black" x="160" y="204">-R/2</text>
+                    <text fill="black" x="160" y="255">-R</text>
+
+                    <text fill="black" x="285" y="140">X</text>
+                    <text fill="black" x="160" y="15">Y</text>
+
+                    <!— Первая фигура —>
+                    <polygon fill="blue" fill-opacity="0.2" stroke="blue" points="100,150 150,150 150,50 100,50">
+                    </polygon>
+
+                    <!— Вторая фигура —>
+                    <polygon fill="blue" fill-opacity="0.2" stroke="blue" points="150,150 150,50 250,150"></polygon>
+
+                    <!— Третья фигура —>
+                    <path fill="blue" fill-opacity="0.2" stroke="blue" d="M 250 150 C 250 250, 150 250, 150 250 L 150 150 Z">
+                    </path>
+
+                    <!— Точка на графике —>
+                    <circle id="point" r="4" cx="150" cy="150" fill="red" stroke="white" visibility="hidden" />
+                </svg>
+                </div>
+            </td>
+            <td>
+                <div class="inner-info">
+                <form id="main-form" target="result" method="get" action="script.php" onsubmit="onSubmitForm()">
+                    <input type="hidden" name="needResult" value="true">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="text-box">
+                                Y: <br>
+                                <input id="y-input" placeholder="from -3 to 3" oninput="onEditY()" type="text" name="y">
+                                <br>
+                                <span id="message" style="visibility: hidden">.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="max-size" border="1">
+                                    <tbody id="x-table">
+                                    <tr>
+                                        <th></th>
+                                        <th>X:</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>-4<input onchange="onEditParameters()" type="checkbox" name="-4x"></td>
+                                        <td>-3<input onchange="onEditParameters()" type="checkbox" name="-3x"></td>
+                                        <td>-2<input onchange="onEditParameters()" type="checkbox" name="-2x"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>-1<input onchange="onEditParameters()" type="checkbox" name="-1x"></td>
+                                        <td>0<input onchange="onEditParameters()" type="checkbox" name="0x"></td>
+                                        <td>1<input onchange="onEditParameters()" type="checkbox" name="1x"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2<input onchange="onEditParameters()" type="checkbox" name="2x"></td>
+                                        <td>3<input onchange="onEditParameters()" type="checkbox" name="3x"></td>
+                                        <td>4<input onchange="onEditParameters()" type="checkbox" name="4x"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="100%">
+                                <br>
+                                <table class="max-size"  border="1">
+                                    <tbody id="r-table">
+                                    <tr>
+                                        <th>R:</th>
+                                        <td>1<input onchange="onEditParameters()" type="checkbox" name="r1"></td>
+                                        <td>1.5<input onchange="onEditParameters()" type="checkbox" name="r1.5"></td>
+                                        <td>2<input onchange="onEditParameters()" type="checkbox" name="r2"></td>
+                                        <td>2.5<input onchange="onEditParameters()" type="checkbox" name="r2.5"></td>
+                                        <td>3<input onchange="onEditParameters()" type="checkbox" name="r3"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br>
+                                <table  class="max-size" >
+                                    <tbody>
+                                    <tr>
+                                        <td id="left-button-cell">
+                                            <a class="button" onclick="onEditParameters()" href="script.php?needResultFromHistory=true" target="history">update history</a>
+                                        </td>
+                                        <td id="middle-button-cell">
+                                            <input onclick="onEditParameters()" class="button" type="submit" value="check">
+                                        </td>
+                                        <td id="right-button-cell">
+                                            <a class="button" onclick="onEditParameters()" href="script.php?needAreasImage=true" target="result">reset result</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+                </div>
+            </td>
+            <td>
                 <table>
-                    <tbody>
-                    <tr class="tr-options">
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>R</th>
-                        <th>Current time</th>
-                        <th>Execution time</th>
-                        <th>Hit result</th>
-                    </tr>
-                    </tbody>
+                    <tr>2</tr>
                 </table>
-            </div>
-        </td>
+            </td>
+        </tr>
         </tbody>
     </table>
 </section>
